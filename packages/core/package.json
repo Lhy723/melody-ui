@@ -1,6 +1,6 @@
 {
   "name": "@star_melody/melody-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 Vue 3 实现的 UI 组件库, 包含了常用的组件和工具",
   "type": "module",
   "main": "./dist/umd/index.umd.cjs",
@@ -23,6 +23,9 @@
   "sideEffects": [
     "./dist/index.css"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "run-s clean build-only move-style",
     "build-only": "run-p build-umd build-es",
