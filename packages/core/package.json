@@ -40,7 +40,7 @@
     "async-validator": "^4.2.5"
   },
   "keywords": [],
-  "author": "star_melody",
+  "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.30.0",
   "devDependencies": {
