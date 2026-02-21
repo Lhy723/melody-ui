@@ -1,5 +1,5 @@
 {
-  "name": "@star_melody/melody-ui",
+  "name": "melody-ui",
   "version": "1.0.1",
   "description": "基于 Vue 3 实现的 UI 组件库, 包含了常用的组件和工具",
   "type": "module",
