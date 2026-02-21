@@ -1,16 +1,52 @@
 {
   "name": "melody-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "基于 Vue 3 实现的 UI 组件库, 包含了常用的组件和工具",
+  "type": "module",
+  "main": "./dist/umd/index.umd.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/core/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs",
+      "types": "./dist/types/core/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "sideEffects": [
+    "./dist/index.css"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "run-s clean build-only move-style",
+    "build-only": "run-p build-umd build-es",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "build-es": "vite build --config vite.es.config.ts",
+    "move-style": "move-file dist/es/index.css dist/index.css",
+    "clean": "rimraf dist",
+    "release": "release-it"
   },
   "dependencies": {
-    "@melody-ui/components": "workspace:*"
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "@popperjs/core": "^2.11.8",
+    "async-validator": "^4.2.5"
   },
   "keywords": [],
-  "author": "",
+  "author": "star_melody",
   "license": "ISC",
-  "packageManager": "pnpm@10.30.0"
+  "packageManager": "pnpm@10.30.0",
+  "devDependencies": {
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.28"
+  }
 }

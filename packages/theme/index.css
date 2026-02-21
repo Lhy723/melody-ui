@@ -1,1 +1,67 @@
 @import './reset.css';
+
+:root {
+  /* colors */
+  --melody-color-white: #ffffff;
+  --melody-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --melody-bg-color: #ffffff;
+  --melody-bg-color-page: #f2f3f5;
+  --melody-bg-color-overlay: #ffffff;
+  --melody-text-color-primary: #303133;
+  --melody-text-color-regular: #606266;
+  --melody-text-color-secondary: #909399;
+  --melody-text-color-placeholder: #a8abb2;
+  --melody-text-color-disabled: #c0c4cc;
+  --melody-border-color: #dcdfe6;
+  --melody-border-color-light: #e4e7ed;
+  --melody-border-color-lighter: #ebeef5;
+  --melody-border-color-extra-light: #f2f6fc;
+  --melody-border-color-dark: #d4d7de;
+  --melody-border-color-darker: #cdd0d6;
+  --melody-fill-color: #f0f2f5;
+  --melody-fill-color-light: #f5f7fa;
+  --melody-fill-color-lighter: #fafafa;
+  --melody-fill-color-extra-light: #fafcff;
+  --melody-fill-color-dark: #ebedf0;
+  --melody-fill-color-darker: #e6e8eb;
+  --melody-fill-color-blank: #ffffff;
+  
+  @each $val, $color in var(--colors) {
+    --melody-color-$(val): $(color);
+    @for $i from 3 to 9 {
+      --melody-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+    }
+    --melody-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  /* border */
+  --melody-border-width: 1px;
+  --melody-border-style: solid;     
+  --melody-border-color-hover: var(--melody-text-color-disabled);
+  --melody-border: var(--melody-border-width) var(--melody-border-style) var(--melody-border-color);
+  --melody-border-radius-base: 4px;
+  --melody-border-radius-small: 2px;
+  --melody-border-radius-round: 20px;
+  --melody-border-radius-circle: 100%;
+
+  /*font*/
+  --melody-font-size-extra-large: 20px;
+  --melody-font-size-large: 18px;
+  --melody-font-size-medium: 16px;
+  --melody-font-size-base: 14px;
+  --melody-font-size-small: 13px;
+  --melody-font-size-extra-small: 12px;
+  --melody-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --melody-font-weight-primary: 500;
+
+  /*disabled*/
+  --melody-disabled-bg-color: var(--melody-fill-color-light);
+  --melody-disabled-text-color: var(--melody-text-color-placeholder);
+  --melody-disabled-border-color: var(--melody-border-color-light);
+
+  /*animation*/
+  --melody-transition-duration: 0.4s;
+  --melody-transition-duration-fast: 0.2s;
+}

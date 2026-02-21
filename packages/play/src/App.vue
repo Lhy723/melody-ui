@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <melody-button />
+    <melody-button type="primary" size="small">Primary Button</melody-button>
   </div>
 </template>
 
